@@ -1506,4 +1506,4 @@ Country:
 Code:986
 Name:DOLAR-ISRAEL
 Symbol:CL$ISR.
-Country:1
+Country:
