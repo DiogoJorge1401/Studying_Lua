@@ -40,10 +40,13 @@ function Trim(s)
 end
 
 function ReadFile(fileName)
-    local File = io.open(fileName, 'r')
-    local Content = File:read('a')
-    File:close()
-    return Content
+    local file = io.open(fileName, 'r')
+    if not (file) then
+        error(table.concat({'File "', fileName, '" not found!'}),2)
+    end
+    local content = file:read('a')
+    file:close()
+    return content
 end
 
 function WriteOnFile(fileName, content)
@@ -56,7 +59,12 @@ local function execute()
     -- currencies.csv
     io.write('Digite o nome do arquivo de entrada: ')
     local fileName = io.read()
-    local content = ReadFile(fileName)
+    local status, content = pcall(ReadFile, fileName)
+
+    if not (status) then
+        print(content)
+        os.exit()
+    end
 
     local line = Trim(content)
     line = Split(line, '\n')
