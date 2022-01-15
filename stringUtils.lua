@@ -1,22 +1,15 @@
 local stringUtils = {}
 
 stringUtils.Split = function(str, sep)
-    local parts = {}
-    local iniPart = 1
-    local posPartBreak, endPartBreak
-    repeat
-        posPartBreak, endPartBreak = string.find(str, sep, iniPart)
-        local endPart
-        if posPartBreak then
-            endPart = posPartBreak - 1
+    local t = {}
+
+    for substr in string.gmatch(str, '[^' .. sep .. ']*') do
+        if substr ~= nil and string.len(substr) > 0 then
+            table.insert(t, substr)
         end
-        local part = string.sub(str, iniPart, endPart)
-        if posPartBreak then
-            iniPart = endPartBreak + 1
-        end
-        table.insert(parts, part)
-    until posPartBreak == nil
-    return parts
+    end
+
+    return t
 end
 
 stringUtils.Trim = function(s)

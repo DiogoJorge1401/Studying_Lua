@@ -1361,17 +1361,17 @@ Country:ZIMBABUE
 Code:008
 Name:BIRR
 Symbol:ETB
-Country:
+Country:28/07/1998
 
 Code:050
 Name:CORDOBA/NICARAGUA
 Symbol:NIC
-Country:
+Country:31/07/1998
 
 Code:088
 Name:CUPON GEORGIANO
 Symbol:RUR
-Country:
+Country:04/08/1998
 
 Code:138
 Name:DIREITO ESPECIAL
@@ -1381,62 +1381,62 @@ Country:
 Code:225
 Name:DOLAR/ETIOPIA
 Symbol:ETB
-Country:
+Country:04/08/1998
 
 Code:361
 Name:FRANCO BELGA FINA
 Symbol:FBF
-Country:
+Country:04/08/1998
 
 Code:385
 Name:FRANCO/BURUNDI
 Symbol:BIF
-Country:
+Country:31/07/1998
 
 Code:410
 Name:FRANCO MALI
 Symbol:MF
-Country:
+Country:31/07/1998
 
 Code:555
 Name:LIBRA ISRAELENSE
 Symbol:IL
-Country:
+Country:04/08/1998
 
 Code:605
 Name:MARCO
 Symbol:M
-Country:
+Country:04/08/1998
 
 Code:645
 Name:NOVO PESO/MEXICO
 Symbol:MXN
-Country:
+Country:08/07/2008
 
 Code:646
 Name:NOVO PESO/MEXICO
 Symbol:MXN
-Country:
+Country:03/06/2008
 
 Code:650
 Name:NOVO PESO URUGUAI
 Symbol:N$
-Country:
+Country:03/06/2008
 
 Code:651
 Name:NOVO PESO URUGUAI
 Symbol:NC�
-Country:
+Country:03/06/2008
 
 Code:663
 Name:NOVO ZAIRE
 Symbol:ZRN
-Country:
+Country:30/10/1998
 
 Code:776
 Name:KARBOVANETS
 Symbol:UAK
-Country:
+Country:04/08/1998
 
 Code:918
 Name:UNID.MONET.EUROP.
@@ -1446,52 +1446,52 @@ Country:
 Code:980
 Name:DOLAR-EX-ALEM.ORI
 Symbol:CL$RDA
-Country:
+Country:04/08/1998
 
 Code:982
 Name:DOLAR-BULGARIA
 Symbol:CL$BULG
-Country:
+Country:04/08/1998
 
 Code:983
 Name:DOLAR-GRECIA
 Symbol:CL$GREC
-Country:
+Country:04/08/1998
 
 Code:984
 Name:DOLAR-HUNGRIA
 Symbol:CL$HUNG
-Country:
+Country:04/08/1998
 
 Code:988
 Name:DOLAR-IUGOSLAVIA
 Symbol:CL$IUG.
-Country:
+Country:04/08/1998
 
 Code:990
 Name:DOLAR-POLONIA
 Symbol:CL$POL.
-Country:
+Country:04/08/1998
 
 Code:991
 Name:PRATA
 Symbol:XAG
-Country:
+Country:10/06/2002
 
 Code:992
 Name:DOLAR-ROMENIA
 Symbol:CL$ROM.
-Country:
+Country:04/08/1998
 
 Code:993
 Name:PALADIO
 Symbol:XPD
-Country:
+Country:10/06/2002
 
 Code:994
 Name:PLATINA
 Symbol:PLAT
-Country:
+Country:10/06/2002
 
 Code:998
 Name:OURO
@@ -1501,9 +1501,9 @@ Country:
 Code:110
 Name:DINAR IEMENITA
 Symbol:YD
-Country:
+Country:31/07/1998
 
 Code:986
 Name:DOLAR-ISRAEL
 Symbol:CL$ISR.
-Country:
+Country:04/08/1998
