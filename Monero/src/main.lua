@@ -1,3 +1,4 @@
+require 'libs.dateUtils'
 require 'libs.stringUtils'
 require 'libs.ioUtils'
 require 'libs.centralBank'
@@ -9,26 +10,13 @@ local function execute(...)
     if args[1] == 'search' then
         local countryName = string.upper((args[2] or ''))
 
-        inputFileName =
-            table.concat(
-            {
-                'quotes/',
-                'M',
-                os.date('%Y%m%d'),
-                '.csv'
-            }
-        )
+        inputFileName = 'quotes/' .. GetCurrenciesFileName(GetDateToday())
 
         local status, content = ReadFile(inputFileName)
 
         if not (status) then
-            print(content, countryName)
-            os.exit(0)
-        end
-        status, content = ReadFile(inputFileName)
-
-        if not (status) then
-            print(content)
+            DownloadCurreciesTable(GetDateToday())
+            execute(...)
             os.exit()
         end
 
@@ -44,17 +32,12 @@ local function execute(...)
 
         local validCurrencie = FilterValidCurrencies(currencysExists)
 
-        if(validCurrencie[1]) then
+        if (validCurrencie[1]) then
             print(validCurrencie[1].Code)
         end
-
-        -- local textCurrencies = Trim(ToString(tableCurrencies))
-    
-        -- WriteOnFile(string.gsub(inputFileName, '.%w+$', '.txt'), textCurrencies)
-    
-        -- io.write('Parse do arquivo feito com succeso!\n')
     end
-
 end
 
-execute(...)
+-- execute(...)
+DownloadCurreciesTable('20220117')
+DownloadQuotesTable('20220114')

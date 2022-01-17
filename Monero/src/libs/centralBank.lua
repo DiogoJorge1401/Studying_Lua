@@ -52,9 +52,35 @@ end
 function FilterValidCurrencies(currencies)
     local filteredCurrencies = {}
     for k, currency in ipairs(currencies) do
-        if not(currency.ExclusionDate) then
+        if not (currency.ExclusionDate) then
             table.insert(filteredCurrencies, currency)
         end
     end
     return filteredCurrencies
+end
+
+function DownloadCurreciesTable(day)
+    local fileName = GetCurrenciesFileName(day, 'M')
+    DownloadFile(fileName)
+end
+function DownloadQuotesTable(day)
+    local fileName = GetCurrenciesFileName(day)
+    DownloadFile(fileName)
+end
+
+function DownloadFile(fileName)
+    local dirPath = 'quotes/' .. fileName
+    local BASE_URL = 'https://www4.bcb.gov.br/Download/fechamento/' .. fileName
+    os.execute(table.concat({'curl -o ', dirPath, ' ', BASE_URL, ' 2>/dev/null'}))
+end
+
+function GetCurrenciesFileName(day, name)
+    name = name or ''
+    return table.concat(
+        {
+            name,
+            day,
+            '.csv'
+        }
+    )
 end
