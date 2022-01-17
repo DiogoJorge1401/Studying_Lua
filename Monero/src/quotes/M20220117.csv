@@ -1,4 +1,4 @@
-"Cï¿½digo";"Nome";"Simbolo";"Cï¿½digo Paï¿½s";"Paï¿½s";"Tipo";"Data Exclusï¿½o PTAX"
+"Código";"Nome";"Simbolo";"Código País";"País";"Tipo";"Data Exclusão PTAX"
 005;AFEGANE AFEGANIST;AFN    ;132;AFEGANISTAO                                       ;A;
 785;RANDE/AFRICA SUL ;ZAR    ;7560;AFRICA DO SUL                                     ;A;
 490;LEK ALBANIA REP;ALL    ;175;ALBANIA, REPUBLICA DA                             ;A;
@@ -78,7 +78,7 @@
 100;DINAR/KWAIT      ;KWD    ;1988;COVEITE                                           ;A;
 779;KUNA DA CROACIA;HRK    ;1953;CROACIA (REPUBLICA DA)                            ;A;
 725;PESO/CUBA        ;CUP    ;1996;CUBA                                              ;A;
-325;GUILDER ANTILHAS HOLANDESAS;ANG    ;3601;CURAï¿½AO;A;
+325;GUILDER ANTILHAS HOLANDESAS;ANG    ;3601;CURAÇAO;A;
 055;COROA DINAMARQUESA;DKK    ;2321;DINAMARCA                                         ;A;
 390;FRANCO/DJIBUTI   ;DJF    ;7838;DJIBUTI                                           ;A;
 215;DOLAR CARIBE ORIENTAL;XCD    ;2356;DOMINICA,ILHA                                     ;A;
@@ -223,7 +223,7 @@
 570;LIBRA DE SANTA HELENA;SHP    ;7102;SANTA HELENA                                      ;B;
 215;DOLAR CARIBE ORIENTAL;XCD    ;7153;SANTA LUCIA                                       ;A;
 215;DOLAR CARIBE ORIENTAL;XCD    ;6955;SAO CRISTOVAO E NEVES,ILHAS                       ;A;
-149;DOBRA Sï¿½O TOMï¿½ E PRï¿½NCIPE;STN    ;7200;SAO TOME E PRINCIPE, ILHAS                        ;A;
+149;DOBRA SÃO TOMÉ E PRÍNCIPE;STN    ;7200;SAO TOME E PRINCIPE, ILHAS                        ;A;
 148;DOBRA S TOME PRIN;STD    ;7200;SAO TOME E PRINCIPE, ILHAS                        ;A;31/12/2017
 215;DOLAR CARIBE ORIENTAL;XCD    ;7056;SAO VICENTE E GRANADINAS                          ;A;
 372;FRANCO CFA BCEAO;XOF    ;7285;SENEGAL                                           ;A;
@@ -284,7 +284,7 @@
 645;NOVO PESO/MEXICO ;MXN    ;;;A;08/07/2008
 646;NOVO PESO/MEXICO ;MXN    ;;;A;03/06/2008
 650;NOVO PESO URUGUAI;N$     ;;;A;03/06/2008
-651;NOVO PESO URUGUAI;NCï¿½    ;;;A;03/06/2008
+651;NOVO PESO URUGUAI;NC€    ;;;A;03/06/2008
 663;NOVO ZAIRE;ZRN    ;;;A;30/10/1998
 776;KARBOVANETS      ;UAK    ;;;A;04/08/1998
 918;UNID.MONET.EUROP.;XEU    ;;;B;

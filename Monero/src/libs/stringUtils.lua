@@ -1,6 +1,4 @@
-local stringUtils = {}
-
-stringUtils.Split = function(str, sep)
+function Split(str, sep)
     local t = {}
 
     for substr in string.gmatch(str, '[^' .. sep .. ']*') do
@@ -12,8 +10,6 @@ stringUtils.Split = function(str, sep)
     return t
 end
 
-stringUtils.Trim = function(s)
+function Trim(s)
     return s:gsub('^%s+', ''):gsub('%s+$', '')
 end
-
-return stringUtils
