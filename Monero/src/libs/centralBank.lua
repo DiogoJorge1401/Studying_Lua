@@ -1,3 +1,4 @@
+local so = require 'so'
 function CurrenciesTableToString(currencies)
     local result = ''
     for _, row in ipairs(currencies) do
@@ -82,9 +83,9 @@ end
 function DownloadFile(fileName)
     local dirPath = 'quotes/' .. fileName
     local BASE_URL = 'https://www4.bcb.gov.br/Download/fechamento/' .. fileName
-    local result = os.execute(table.concat({'curl -o ', dirPath, ' ', BASE_URL, ' 2>/dev/null'}))
-    if not(result) then
-        print("Unable to download currencies file. Try later")
+    local result = os.execute(table.concat({'curl -o ', dirPath, ' ', BASE_URL, ' 2>', so.getParam('NULL_DEV')}))
+    if not (result) then
+        print('Unable to download currencies file. Try later')
         os.exit()
     end
 end
