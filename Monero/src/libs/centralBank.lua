@@ -104,7 +104,8 @@ function CreateQuoteTable(content)
     local quotesFinalTable = {}
 
     for _, line in ipairs(quotesTable) do
-        table.insert(quotesFinalTable, ReadQuote(line))
+        local quote = ReadQuote(line)
+        quotesFinalTable[quote.Symbol] = quote
     end
 
     return quotesFinalTable
@@ -144,12 +145,14 @@ function ShowQuote(quote)
                 'Purchase: ',
                 quote.PurchaseFee,
                 ' Sale: ',
-                quote.SaleFee,'\n',
+                quote.SaleFee,
+                '\n',
                 'Parity\t=> ',
                 'Purchase: ',
                 quote.PurchaseParity,
                 ' Sale: ',
-                quote.ParitySale,'\n'
+                quote.ParitySale,
+                '\n'
             }
         )
     )
