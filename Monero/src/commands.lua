@@ -35,14 +35,14 @@ Commands.convert = function(args)
     local quotesTable = CreateQuoteTable(content)
     local sourceCurrenncy = quotesTable[sourceCurrenncySymbol]
     local destineCurrency = quotesTable[destineCurrencySymbol]
-    if not (sourceCurrenncy) then
+    if not (sourceCurrenncy) and sourceCurrenncySymbol ~= REAL_SYMBOL then
         print('Quote symbol not found: "' .. sourceCurrenncySymbol .. '"')
         os.exit()
-    elseif not (destineCurrency) then
+    elseif not (destineCurrency) and destineCurrencySymbol ~= REAL_SYMBOL then
         print('Quote symbol not found: "' .. destineCurrencySymbol .. '"')
         os.exit()
     end
-    local conversionAmount = Convert(value, sourceCurrenncy, destineCurrency)
+    local conversionAmount = Convert(quotesTable, value, sourceCurrenncySymbol, destineCurrencySymbol)
     print(string.format('%s %s = %s %s', value, sourceCurrenncySymbol, conversionAmount, destineCurrencySymbol))
 end
 

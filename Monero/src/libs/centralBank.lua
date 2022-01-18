@@ -158,20 +158,31 @@ function ShowQuote(quote)
     )
 end
 
-function ToDollar(amount, srcQuote)
-    if srcQuote.Type == 'A' then
-        return amount / srcQuote.ParitySale
+REAL_SYMBOL = 'BRL'
+
+function ToDollar(quoteTable, amount, currencySymbol)
+    if currencySymbol == REAL_SYMBOL then
+        return amount / quoteTable.USD.SaleFee
     end
-    return amount * srcQuote.ParitySale
+
+    local currency = quoteTable[currencySymbol]
+    if currency.Type == 'A' then
+        return amount / currency.ParitySale
+    end
+    return amount * currency.ParitySale
 end
 
-function FromDollar(amount, destQuote)
-    if destQuote.Type == 'A' then
-        return amount * destQuote.ParitySale
+function FromDollar(quoteTable, amount, currencySymbol)
+    if currencySymbol == REAL_SYMBOL then
+        return amount * quoteTable.USD.SaleFee
     end
-    return amount / destQuote.ParitySale
+    local currency = quoteTable[currencySymbol]
+    if currency.Type == 'A' then
+        return amount * currency.ParitySale
+    end
+    return amount / currency.ParitySale
 end
 
-function Convert(amount, srcQuote, destQuote)
-    return FromDollar(ToDollar(amount, srcQuote), destQuote)
+function Convert(quoteTable, amount, srcQuoteSymbol, destQuoteSymbol)
+    return FromDollar(quoteTable, ToDollar(quoteTable, amount, srcQuoteSymbol), destQuoteSymbol)
 end
