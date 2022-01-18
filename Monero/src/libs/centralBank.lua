@@ -82,7 +82,11 @@ end
 function DownloadFile(fileName)
     local dirPath = 'quotes/' .. fileName
     local BASE_URL = 'https://www4.bcb.gov.br/Download/fechamento/' .. fileName
-    os.execute(table.concat({'curl -o ', dirPath, ' ', BASE_URL, ' 2>/dev/null'}))
+    local result = os.execute(table.concat({'curl -o ', dirPath, ' ', BASE_URL, ' 2>/dev/null'}))
+    if not(result) then
+        print("Unable to download currencies file. Try later")
+        os.exit()
+    end
 end
 
 function GetCurrenciesFileName(day, name)
