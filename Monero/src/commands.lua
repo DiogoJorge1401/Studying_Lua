@@ -17,6 +17,10 @@ Commands.search = function(args)
     local tableCurrencies = CreateTableCurrencies(content)
     local currencysExists = GetCurrencyByCountry(tableCurrencies, countryName)
     local validCurrencie = FilterValidCurrencies(currencysExists)
+    if not validCurrencie[1] then
+        print('Country not found: '.. countryName)
+        os.exit()
+    end
     print('Symbol: ' .. validCurrencie[1].Symbol)
 end
 
