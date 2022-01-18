@@ -16,7 +16,7 @@ local function execute(...)
 
         if not (status) then
             DownloadCurreciesTable(GetDateToday())
-            print("Baixando moedas atualizadas!")
+            print('Baixando moedas atualizadas!')
             execute(...)
             os.exit()
         end
@@ -31,8 +31,16 @@ local function execute(...)
     end
 end
 
--- execute(...)
+execute(...)
 
-DownloadQuotesTable('20220114')
-local status, content = ReadFile('quotes/20220114.csv')
+-- DownloadQuotesTable('20220114')
+local _, content = ReadFile('quotes/20220114.csv')
 local quotesTable = CreateQuoteTable(content)
+
+local USD = quotesTable[48]
+local AFN = quotesTable[1]
+
+ShowQuote(USD)
+ShowQuote(AFN)
+
+print(Convert(5, AFN, USD))

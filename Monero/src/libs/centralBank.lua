@@ -122,7 +122,6 @@ function ReadQuote(quoteLine)
         PurchaseParity = (quote_fields[7] and CBPriceToNumber(quote_fields[7])),
         ParitySale = (quote_fields[8] and CBPriceToNumber(quote_fields[8]))
     }
-    ShowQuote(quote)
 
     return quote
 end
@@ -135,29 +134,41 @@ function ShowQuote(quote)
     print(
         table.concat(
             {
-                'Code=',
-                (quote.Code or ''),
+                'Currency: ',
+                quote.Symbol,
+                ' (',
+                quote.Type,
+                ')',
                 '\n',
-                'Type=',
-                (quote.Type or ''),
-                '\n',
-                'Symbol=',
-                (quote.Symbol or ''),
-                '\n',
-                'PurchaseFee=',
-                (quote.PurchaseFee or ''),
-                '\n',
-                'SaleFee=',
-                (quote.SaleFee or ''),
-                '\n',
-                'PurchaseParity=',
-                (quote.PurchaseParity or ''),
-                '\n',
-                'ParitySale=',
-                (quote.ParitySale or ''),
-                '\n',
-                '\n'
+                'Tax\t=> ',
+                'Purchase: ',
+                quote.PurchaseFee,
+                ' Sale: ',
+                quote.SaleFee,'\n',
+                'Parity\t=> ',
+                'Purchase: ',
+                quote.PurchaseParity,
+                ' Sale: ',
+                quote.ParitySale,'\n'
             }
         )
     )
+end
+
+function ToDollar(amount, srcQuote)
+    if srcQuote.Type == 'A' then
+        return amount / srcQuote.ParitySale
+    end
+    return amount * srcQuote.ParitySale
+end
+
+function FromDollar(amount, destQuote)
+    if destQuote.Type == 'A' then
+        return amount * destQuote.ParitySale
+    end
+    return amount / destQuote.ParitySale
+end
+
+function Convert(amount, srcQuote, destQuote)
+    return FromDollar(ToDollar(amount, srcQuote), destQuote)
 end
